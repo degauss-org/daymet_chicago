@@ -5,7 +5,7 @@
 
 ## Background
 
-Daymet weather variables include daily minimum and maximum temperature, precipitation, vapor pressure, shortwave radiation, snow water equivalent, and day length produced on a 1 km x 1 km gridded surface over continental North America and Hawaii from 1980 and over Puerto Rico from 1950 through the end of the most recent full calendar year.
+The Daymet weather variables included in this package are daily minimum and maximum temperature at a 1 km x 1 km gridded surface over the area of Cook County, IL for the years 2016 through 2022. This package is specifically for data linkage in the Cook County area between those years and for those variables, and cannot be altered.
 
 Daymet data documentation: https://daac.ornl.gov/DAYMET/guides/Daymet_Daily_V4.html
 
@@ -24,7 +24,7 @@ will produce `my_addresses_daymet_0.2.0.csv` with added columns:
 - **`tmax`**: maximum temperature
 - **`tmin`**: minimum temperature
 
-Other columns may be present in the input `my_addresses.csv` file, and these other columns will be linked in and included in the output `my_addresses_daymet_0.1.0.csv` file.
+Other columns may be present in the input `my_addresses.csv` file, and these other columns will be linked in and included in the output `my_addresses_daymet_0.2.0.csv` file.
 
 ### Optional Arguments
 
@@ -32,18 +32,14 @@ There are no optional arguments associated with this package. All arguments are 
 
 ## Geomarker Methods
 
-Daymet data on a specified date is linked to coordinate data within the `my_addresses.csv` file by matching on the Daymet 1 km x 1 km raster cell number.
+Daymet data on a specified date is linked to coordinate data within the `my_addresses.csv` file by matching on the Daymet 1 km x 1 km raster cell number. The set boundary box is Cook County, IL.
 
 ## Geomarker Data
 
 - This package takes pre-downloaded environmental data from [Daymet](https://daymet.ornl.gov/) as netCDF file(s).
 - The R code that links the environmental data to the input coordinates is within `entrypoint.R`.
 
-## Warning
-
-If the bounding box for Daymet data download is inferred from address coordinates, then the size of the Daymet data download may be quite large if the address coordinates are very spread out. If a wide spread of coordinates is desired, then it may be best to stratify your input dataset to coordinates within separate geographic regions.
-
 ## DeGAUSS Details
 
-The Daymet DeGAUSS package was created by Ben Barrett and Peter Graffy.
+The Daymet DeGAUSS package was created by Ben Barrett and Peter Graffy, and is designed for use by the Chicago Area Patient-Centered Outcomes Research Network (CAPriCORN).
 For detailed documentation on DeGAUSS, including general usage and installation, please see the [DeGAUSS homepage](https://degauss.org).
