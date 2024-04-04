@@ -1,13 +1,13 @@
 .PHONY: build test shell clean
 
 build:
-	docker build -t daymetdl .
+	docker build -t daymet_chicago .
 
 test:
-	docker run --rm -v "${PWD}":/tmp daymetdl loyalty_degauss.csv
+	docker run --rm -v "${PWD}":/tmp daymet_chicago loyalty_degauss.csv
 
 shell:
-	docker run --rm -it --entrypoint=/bin/bash -v "${PWD}":/tmp daymetdl
+	docker run --rm -it --entrypoint=/bin/bash -v "${PWD}":/tmp daymet_chicago
 
 clean:
 	docker system prune -f
