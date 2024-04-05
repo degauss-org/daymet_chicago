@@ -140,7 +140,7 @@ import_data <- function(.csv_filename = opt$filename, .min_lon = min_lon, .max_l
   return(out)
 }
 
-# Creating function to load the Daymet NetCDF data
+# Create function to load the Daymet NetCDF data
 daymet_load <- function() {
   # Loading the NetCDF files downloaded from Daymet as a SpatRaster raster stack
   netcdf_list <- list.files(path = "app", pattern = "_ncss.nc$")
