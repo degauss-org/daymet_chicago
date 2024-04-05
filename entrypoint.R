@@ -140,10 +140,10 @@ import_data <- function(.csv_filename = opt$filename, .min_lon = min_lon, .max_l
   return(out)
 }
 
-# Creating function to load the Daymet NetCDF data
+# Create function to load the Daymet NetCDF data
 daymet_load <- function() {
   # Loading the NetCDF files downloaded from Daymet as a SpatRaster raster stack
-  netcdf_list <- list.files(pattern = "_ncss.nc$")
+  netcdf_list <- list.files(path = "/app", pattern = "_ncss.nc$")
   # Initializing a time dictionary
   time_dict <- tibble(number = 1:365)
   for (i in 1:length(netcdf_list)) {
@@ -154,7 +154,7 @@ daymet_load <- function() {
     layer_names <- as.character(1:365)
     layer_names <- paste0(dm_var, "_", layer_names, "_", yr)
     # Loading the Daymet data
-    daymet_load <- rast(netcdf_list[i])
+    daymet_load <- rast(paste0("/app/", netcdf_list[i]))
     names(daymet_load) <- layer_names
     # Creating a dictionary to link numbers 1–365 to a date in a year (time dictionary)
     origin <- as_date(paste0(yr, "-01-01")) - 1 # Numbers count days since origin
