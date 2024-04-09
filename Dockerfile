@@ -3,7 +3,7 @@ FROM rocker/r-ver:4.3.0
 
 # DeGAUSS container metadata
  ENV degauss_name="daymet_chicago"
- ENV degauss_version="0.1.0"
+ ENV degauss_version="0.1.1"
  ENV degauss_description="daymet climate variables for chicago"
  ENV degauss_argument="short description of optional argument [default: 'insert_default_value_here']"
 
@@ -27,4 +27,3 @@ COPY tmax_daily_2016_ncss.nc tmax_daily_2017_ncss.nc tmax_daily_2018_ncss.nc tma
 WORKDIR /tmp
 
 ENTRYPOINT ["/usr/local/bin/Rscript", "/app/entrypoint.R"]
-
