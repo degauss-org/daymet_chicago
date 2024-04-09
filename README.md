@@ -16,15 +16,15 @@ Note: The Daymet calendar is based on a standard calendar year. All Daymet years
 If `my_addresses.csv` is a file in the current working directory with ID column `id`, start and end date columns `start_date` and `end_date`, and coordinate columns named `lat` and `lon`, then the [DeGAUSS command](https://degauss.org/using_degauss.html#DeGAUSS_Commands):
 
 ```sh
-docker run --rm -v $PWD:/tmp ghcr.io/degauss-org/daymet_chicago:0.1.0 my_addresses.csv
+docker run --rm -v $PWD:/tmp ghcr.io/degauss-org/daymet_chicago:0.1.1 my_addresses.csv
 ```
 
-will produce `my_addresses_daymet_0.1.0.csv` with added columns:
+will produce `my_addresses_daymet.csv` with added columns:
 
 - **`tmax`**: maximum temperature
 - **`tmin`**: minimum temperature
 
-Other columns may be present in the input `my_addresses.csv` file, and these other columns will be linked in and included in the output `my_addresses_daymet_0.1.0.csv` file.
+Other columns may be present in the input `my_addresses.csv` file, and these other columns will be linked in and included in the output `my_addresses_daymet.csv` file.
 
 ### Optional Arguments
 
