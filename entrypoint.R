@@ -154,7 +154,7 @@ daymet_load <- function() {
     layer_names <- as.character(1:365)
     layer_names <- paste0(dm_var, "_", layer_names, "_", yr)
     # Loading the Daymet data
-    daymet_load <- rast(netcdf_list[i])
+    daymet_load <- rast(paste0("/app/", netcdf_list[i]))
     names(daymet_load) <- layer_names
     # Creating a dictionary to link numbers 1–365 to a date in a year (time dictionary)
     origin <- as_date(paste0(yr, "-01-01")) - 1 # Numbers count days since origin
