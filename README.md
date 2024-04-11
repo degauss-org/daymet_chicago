@@ -1,7 +1,7 @@
 # daymet_chicago <a href='https://degauss.org'><img src='https://github.com/degauss-org/degauss_hex_logo/raw/main/PNG/degauss_hex.png' align='right' height='138.5' /></a>
 
-[![](https://img.shields.io/github/v/release/degauss-org/daymet?color=469FC2&label=version&sort=semver)](https://github.com/degauss-org/daymet/releases)
-[![container build status](https://github.com/degauss-org/daymet/workflows/build-deploy-release/badge.svg)](https://github.com/degauss-org/daymet/actions/workflows/build-deploy-release.yaml)
+[![](https://img.shields.io/github/v/release/degauss-org/daymet_chicago?color=469FC2&label=version&sort=semver)](https://github.com/degauss-org/daymet_chicago/releases)
+[![container build status](https://github.com/degauss-org/daymet_chicago/workflows/build-deploy-release/badge.svg)](https://github.com/degauss-org/daymet_chicago/actions/workflows/build-deploy-release.yaml)
 
 ## Background
 
