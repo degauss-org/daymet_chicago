@@ -22,7 +22,7 @@ WORKDIR /app
  RUN R -e "install.packages(c('daymetr', 'tidyverse', 'terra', 'gtools', 'data.table', 'remotes', 'withr'))"
  RUN R --quiet -e "remotes::install_github('degauss-org/dht')"
 
-COPY tmax_daily_2016_ncss.nc tmax_daily_2017_ncss.nc tmax_daily_2018_ncss.nc tmax_daily_2019_ncss.nc tmax_daily_2020_ncss.nc tmax_daily_2021_ncss.nc tmax_daily_2022_ncss.nc tmin_daily_2016_ncss.nc tmin_daily_2017_ncss.nc tmin_daily_2018_ncss.nc tmin_daily_2019_ncss.nc tmin_daily_2020_ncss.nc tmin_daily_2021_ncss.nc tmin_daily_2022_ncss.nc entrypoint.R .
+COPY tmax_daily_2011_ncss.nc tmax_daily_2012_ncss.nc tmax_daily_2013_ncss.nc tmax_daily_2014_ncss.nc tmax_daily_2015_ncss.nc tmax_daily_2016_ncss.nc tmax_daily_2017_ncss.nc tmax_daily_2018_ncss.nc tmax_daily_2019_ncss.nc tmax_daily_2020_ncss.nc tmax_daily_2021_ncss.nc tmax_daily_2022_ncss.nc tmax_daily_2023_ncss.nc tmin_daily_2011_ncss.nc tmin_daily_2012_ncss.nc tmin_daily_2013_ncss.nc tmin_daily_2014_ncss.nc tmin_daily_2015_ncss.nc tmin_daily_2016_ncss.nc tmin_daily_2017_ncss.nc tmin_daily_2018_ncss.nc tmin_daily_2019_ncss.nc tmin_daily_2020_ncss.nc tmin_daily_2021_ncss.nc tmin_daily_2022_ncss.nc tmin_daily_2023_ncss.nc entrypoint.R .
 
 WORKDIR /tmp
 

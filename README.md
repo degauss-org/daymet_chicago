@@ -1,11 +1,11 @@
 # daymet_chicago <a href='https://degauss.org'><img src='https://github.com/degauss-org/degauss_hex_logo/raw/main/PNG/degauss_hex.png' align='right' height='138.5' /></a>
 
-[![](https://img.shields.io/github/v/release/degauss-org/daymet_chicago?color=469FC2&label=version&sort=semver)](https://github.com/degauss-org/daymet_chicago/releases)
-[![container build status](https://github.com/degauss-org/daymet_chicago/workflows/build-deploy-release/badge.svg)](https://github.com/degauss-org/daymet_chicago/actions/workflows/build-deploy-release.yaml)
+[![](https://img.shields.io/github/v/release/degauss-org/daymet?color=469FC2&label=version&sort=semver)](https://github.com/degauss-org/daymet/releases)
+[![container build status](https://github.com/degauss-org/daymet/workflows/build-deploy-release/badge.svg)](https://github.com/degauss-org/daymet/actions/workflows/build-deploy-release.yaml)
 
 ## Background
 
-The Daymet weather variables included in this package are daily minimum and maximum temperature at a 1 km x 1 km gridded surface over the area of Cook County, IL for the years 2016 through 2022. This package is specifically for data linkage in the Cook County area between those years and for those variables, and cannot be altered.
+The Daymet weather variables included in this package are daily minimum and maximum temperature at a 1 km x 1 km gridded surface over the area of Cook County, IL for the years 2011 through 2023. This package is specifically for data linkage in the Cook County area between those years and for those variables, and cannot be altered.
 
 Daymet data documentation: https://daac.ornl.gov/DAYMET/guides/Daymet_Daily_V4.html
 
@@ -15,8 +15,16 @@ Note: The Daymet calendar is based on a standard calendar year. All Daymet years
 
 If `my_addresses.csv` is a file in the current working directory with ID column `id`, start and end date columns `start_date` and `end_date`, and coordinate columns named `lat` and `lon`, then the [DeGAUSS command](https://degauss.org/using_degauss.html#DeGAUSS_Commands):
 
+On Windows/PC:
+
 ```sh
-docker run --rm -v $PWD:/tmp ghcr.io/degauss-org/daymet_chicago:0.1.1 my_addresses.csv
+docker run --rm -v $PWD:/tmp ghcr.io/degauss-org/daymet_chicago:0.1.2 my_addresses.csv
+```
+
+On iOS/Mac or if you want to explicitly define your file path:
+
+```sh
+docker run --rm -v "/Users/path_to/your/project":/tmp ghcr.io/degauss-org/daymet_chicago:0.1.2 my_addresses.csv
 ```
 
 will produce `my_addresses_daymet.csv` with added columns:
