@@ -13,7 +13,7 @@ Note: The Daymet calendar is based on a standard calendar year. All Daymet years
 
 ## Using
 
-If `my_addresses.csv` is a file in the current working directory with:
+If `my_addresses.csv` is a file in the current working directory with the following columns:
 - ID column `id`
 - date of the encounter `enc_admit_date` in YYYY-mm-dd
 - start and end date columns `start_date` and `end_date` where `end_date` should match the date of the encounter in YYYY-mm-dd
