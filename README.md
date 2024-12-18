@@ -13,16 +13,7 @@ Note: The Daymet calendar is based on a standard calendar year. All Daymet years
 
 ## Using
 
-If `my_addresses.csv` is a file in the current working directory with:
-- ID column `id`
-- date of the encounter `enc_admit_date`
-- start and end date columns `start_date` and `end_date` where `end_date` should match the date of the encounter
-- subsequent number of addresses per patient `address_number` 
-- census tract of patient `census_tract`
-- date of last known address `census_tract_date`
-- and coordinate columns named `lat` and `lon`
-
-Then the [DeGAUSS command](https://degauss.org/using_degauss.html#DeGAUSS_Commands):
+If `my_addresses.csv` is a file in the current working directory with ID column `id`, start and end date columns `start_date` and `end_date`, and coordinate columns named `lat` and `lon`, then the [DeGAUSS command](https://degauss.org/using_degauss.html#DeGAUSS_Commands):
 
 On Windows/PC:
 
