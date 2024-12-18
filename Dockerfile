@@ -3,7 +3,7 @@ FROM rocker/r-ver:4.3.0
 
 # DeGAUSS container metadata
  ENV degauss_name="daymet_chicago"
- ENV degauss_version="0.1.1"
+ ENV degauss_version="0.1.2"
  ENV degauss_description="daymet climate variables for chicago"
  ENV degauss_argument="short description of optional argument [default: 'insert_default_value_here']"
 
