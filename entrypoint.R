@@ -32,7 +32,10 @@ import_data <- function(.csv_filename = opt$filename, .min_lon = min_lon, .max_l
     stop(call. = FALSE, 'Input file must be a CSV.')
   }
   # Reading in the input data
-  input_data <- fread(.csv_filename, header = TRUE, sep = ",", colClasses = c(start_date = "character", end_date = "character"))
+  input_data <- fread(.csv_filename, header = TRUE, sep = ",", colClasses = c(id = "character", lat = "numeric", lon = "numeric",
+                                                                              enc_admit_date = "IDate", start_date = "character",
+                                                                              end_date = "character", address_number = "integer",
+                                                                              census_tract = "character", census_tract_date = "IDate"))
   input_data <- as_tibble(input_data)
   # Creating a row_index variable in the input data that is just the row number
   input_data <- input_data %>%
@@ -311,10 +314,11 @@ main_dataset <- main_dataset %>%
   select(-c(sort1, sort2)) %>%
   distinct()
 
+# Renaming the id variable to patid
+main_dataset <- main_dataset %>% 
+  rename("patid" = "id")
+
 # Writing the results out as a CSV file
 csv_out <- paste0(unlist(str_split(opt$filename, ".csv"))[1], "_daymet", ".csv")
 fwrite(main_dataset, csv_out, na = "", row.names = FALSE)
 rm(list = ls(all.names = TRUE))
-
-# [Optional - Uncomment to run] Deleting the NetCDF files from disk
-#unlink(list.files(pattern = "_ncss.nc$"), force = TRUE)
