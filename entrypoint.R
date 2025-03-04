@@ -250,6 +250,11 @@ daymet_data_dt <- as.data.frame(daymet_data, cells = TRUE)
 daymet_data_dt <- as.data.table(daymet_data_dt)
 rm(daymet_data)
 
+# Subsetting the Daymet data table to only the cell numbers that matched the input address coordinates
+addresses_cells <- unique(addresses$cell)
+daymet_data_dt <- setDT(daymet_data_dt, key = 'cell')[J(addresses_cells)]
+rm(addresses_cells)
+
 # Transposing the Daymet data table, one Daymet variable at a time
 transpose_daymet <- function(.daymet_data_dt = daymet_data_dt, dm_var) {
   daymet_data_dt_var <- .daymet_data_dt %>%
