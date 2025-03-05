@@ -27,13 +27,13 @@ Then the [DeGAUSS command](https://degauss.org/using_degauss.html#DeGAUSS_Comman
 On Windows/PC:
 
 ```sh
-docker run --rm -v $PWD:/tmp ghcr.io/degauss-org/daymet_chicago:0.1.2 my_addresses.csv
+docker run --rm -v $PWD:/tmp ghcr.io/degauss-org/daymet_chicago:0.1.3 my_addresses.csv
 ```
 
 On iOS/Mac or if you want to explicitly define your file path:
 
 ```sh
-docker run --rm -v "/Users/path_to/your/project":/tmp ghcr.io/degauss-org/daymet_chicago:0.1.2 my_addresses.csv
+docker run --rm -v "/Users/path_to/your/project":/tmp ghcr.io/degauss-org/daymet_chicago:0.1.3 my_addresses.csv
 ```
 
 will produce `my_addresses_daymet.csv` with added columns:
